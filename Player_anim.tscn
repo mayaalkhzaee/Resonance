@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr7md6ibv5aaa"]
+
+[ext_resource type="Texture2D" uid="uid://iej1u8utrmye" path="res://Background/Scud_tileset/abd tileset.png" id="1_0ifec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp8uf"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(16, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi856"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(8, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ajll"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(24, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grsf4"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(56, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0vre"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(0, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r66b"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(56, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puxx2"]
+atlas = ExtResource("1_0ifec")
+region = Rect2(0, 64, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tx02y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp8uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi856")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ajll")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grsf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0vre")
+}],
+"loop": true,
+"name": &"Walking_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r66b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puxx2")
+}],
+"loop": true,
+"name": &"Walking_Right",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_tx02y")
+animation = &"Death"
+frame = 2
+frame_progress = 1.0
